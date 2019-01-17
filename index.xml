@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradient IIITS</title>
+    <link>http://gradient-iiits.github.io/</link>
+    <description>Recent content on Gradient IIITS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Jan 2019 00:03:58 +0530</lastBuildDate>
+    
+	<atom:link href="http://gradient-iiits.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Gradient</title>
+      <link>http://gradient-iiits.github.io/posts/about-gradient/</link>
+      <pubDate>Fri, 18 Jan 2019 00:03:58 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/posts/about-gradient/</guid>
+      <description>Indian Institute of Information Technology, Sri City, Chittoor known as IIIT, Sri City is an institute of national importance, setting best-in-class technology education standards in India. IIITS was established in 2013 under the Government of India’s Initiative to set up 20 Institutes across India, focusing on Information Technology. The Institute was setup by the Government of India – MHRD, Government of Andhra Pradesh and Industry Partners represented by Sri City Foundation as a Not-for-Profit Public-Private-Partnership.</description>
+    </item>
+    
+  </channel>
+</rss>
