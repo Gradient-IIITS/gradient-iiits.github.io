@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gradient IIITS</title>
-    <link>http://gradient-iiits.github.io/</link>
-    <description>Recent content on Gradient IIITS</description>
+    <title>Competitive Programming on Gradient IIITS</title>
+    <link>http://gradient-iiits.github.io/tags/competitive-programming/</link>
+    <description>Recent content in Competitive Programming on Gradient IIITS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Jan 2019 00:18:16 +0530</lastBuildDate>
     
-	<atom:link href="http://gradient-iiits.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gradient-iiits.github.io/tags/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>http://gradient-iiits.github.io/posts/competitive-programming-how-do-i-start/</guid>
       <description>A lot of enthusiastic beginners are often intimidated by the huge amount of topics in CP and the amount of OJ’s on the web. As a result, due to lack of guidance they are let down ,take up inefficient learning methods and end up getting frustrated. This article aims to guide beginners on how to start your journey into the world of competitive programming.
 These are the brief areas I wish to cover in this article:</description>
-    </item>
-    
-    <item>
-      <title>About Gradient</title>
-      <link>http://gradient-iiits.github.io/posts/about-gradient/</link>
-      <pubDate>Fri, 18 Jan 2019 00:03:58 +0530</pubDate>
-      
-      <guid>http://gradient-iiits.github.io/posts/about-gradient/</guid>
-      <description>Indian Institute of Information Technology, Sri City, Chittoor known as IIIT, Sri City is an institute of national importance, setting best-in-class technology education standards in India. IIITS was established in 2013 under the Government of India’s Initiative to set up 20 Institutes across India, focusing on Information Technology. The Institute was setup by the Government of India – MHRD, Government of Andhra Pradesh and Industry Partners represented by Sri City Foundation as a Not-for-Profit Public-Private-Partnership.</description>
     </item>
     
   </channel>

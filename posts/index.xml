@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Gradient IIITS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Jan 2019 00:03:58 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jan 2019 00:18:16 +0530</lastBuildDate>
     
 	<atom:link href="http://gradient-iiits.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Competitive Programming - How do I Start ?</title>
+      <link>http://gradient-iiits.github.io/posts/competitive-programming-how-do-i-start/</link>
+      <pubDate>Sun, 20 Jan 2019 00:18:16 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/posts/competitive-programming-how-do-i-start/</guid>
+      <description>A lot of enthusiastic beginners are often intimidated by the huge amount of topics in CP and the amount of OJ’s on the web. As a result, due to lack of guidance they are let down ,take up inefficient learning methods and end up getting frustrated. This article aims to guide beginners on how to start your journey into the world of competitive programming.
+These are the brief areas I wish to cover in this article:</description>
+    </item>
     
     <item>
       <title>About Gradient</title>
