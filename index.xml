@@ -6,10 +6,21 @@
     <description>Recent content on Gradient IIITS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Feb 2019 00:18:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 00:18:00 +0530</lastBuildDate>
     
 	<atom:link href="http://gradient-iiits.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Through Python3 (Day 2)</title>
+      <link>http://gradient-iiits.github.io/posts/python3-2/</link>
+      <pubDate>Sat, 16 Feb 2019 00:18:00 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/posts/python3-2/</guid>
+      <description>Through Python3(Day 2) Hola Everyone, the Previous day we learned about how everything in Python is an object and about Mutable and Immutable Datatypes. If You haven’t the go through the link and read about them and come back again to join us.
+Today we will be talking about Conditionals and Loops.
+Conditionals So first let me tell you all about Conditionals. Python provides two ways to treat conditionals. The first one is the native way.</description>
+    </item>
     
     <item>
       <title>Through Python3 (Day 1)</title>
