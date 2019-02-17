@@ -6,10 +6,20 @@
     <description>Recent content on Gradient IIITS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jan 2019 00:18:16 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 15 Feb 2019 00:18:00 +0530</lastBuildDate>
     
 	<atom:link href="http://gradient-iiits.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Through Python3 (Day 1)</title>
+      <link>http://gradient-iiits.github.io/posts/python3-1/</link>
+      <pubDate>Fri, 15 Feb 2019 00:18:00 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/posts/python3-1/</guid>
+      <description>Through Python3 (Day 1) Thanks for joining us! I am Krishna and I will be your host for this blog post. This blog post will be guiding you to learn basics of Python.
+ A little girl goes into a pet show and asks for a wabbit. The shop keeper looks down at her, smiles and says: “Would you like a lovely fluffy little white rabbit, or a cutesy wootesly little brown rabbit?</description>
+    </item>
     
     <item>
       <title>Competitive Programming - How do I Start ?</title>

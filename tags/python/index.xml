@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Gradient IIITS</title>
+    <link>http://gradient-iiits.github.io/tags/python/</link>
+    <description>Recent content in Python on Gradient IIITS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Feb 2019 00:18:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://gradient-iiits.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Through Python3 (Day 1)</title>
+      <link>http://gradient-iiits.github.io/posts/python3-1/</link>
+      <pubDate>Fri, 15 Feb 2019 00:18:00 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/posts/python3-1/</guid>
+      <description>Through Python3 (Day 1) Thanks for joining us! I am Krishna and I will be your host for this blog post. This blog post will be guiding you to learn basics of Python.
+ A little girl goes into a pet show and asks for a wabbit. The shop keeper looks down at her, smiles and says: “Would you like a lovely fluffy little white rabbit, or a cutesy wootesly little brown rabbit?</description>
+    </item>
+    
+  </channel>
+</rss>

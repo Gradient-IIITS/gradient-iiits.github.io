@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Gradient IIITS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jan 2019 00:18:16 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 15 Feb 2019 00:18:00 +0530</lastBuildDate>
     
 	<atom:link href="http://gradient-iiits.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Beginner</title>
       <link>http://gradient-iiits.github.io/tags/beginner/</link>
-      <pubDate>Sun, 20 Jan 2019 00:18:16 +0530</pubDate>
+      <pubDate>Fri, 15 Feb 2019 00:18:00 +0530</pubDate>
       
       <guid>http://gradient-iiits.github.io/tags/beginner/</guid>
       <description></description>
@@ -26,6 +26,15 @@
       <pubDate>Sun, 20 Jan 2019 00:18:16 +0530</pubDate>
       
       <guid>http://gradient-iiits.github.io/tags/competitive-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://gradient-iiits.github.io/tags/python/</link>
+      <pubDate>Fri, 15 Feb 2019 00:18:00 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/tags/python/</guid>
       <description></description>
     </item>
     
