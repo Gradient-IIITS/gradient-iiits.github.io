@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Gradient IIITS  | Sparse Table</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.70.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Sparse Table" />
+<meta property="og:description" content="Sparse Table Sparse Table is a data structure that lets you answer, most range queries in $\mathcal{O}(\log{n})$, in an immutable array. But for some queries like (minimum, maximum, gcd) it can answer queries in $\mathcal{O}(1)$. It also requires $\mathcal{O}(n\log{n})$ preprocessing time and extra space of similar order. One thing to note is that you cannot change the elements of the array, therefore this algorithm might be useful only when values of array remain unchanged." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gradient-iiits.github.io/posts/sparse-table/" />
+<meta property="article:published_time" content="2020-05-17T18:06:28+05:30" />
+<meta property="article:modified_time" content="2020-05-17T18:06:28+05:30" />
+<meta itemprop="name" content="Sparse Table">
+<meta itemprop="description" content="Sparse Table Sparse Table is a data structure that lets you answer, most range queries in $\mathcal{O}(\log{n})$, in an immutable array. But for some queries like (minimum, maximum, gcd) it can answer queries in $\mathcal{O}(1)$. It also requires $\mathcal{O}(n\log{n})$ preprocessing time and extra space of similar order. One thing to note is that you cannot change the elements of the array, therefore this algorithm might be useful only when values of array remain unchanged.">
+<meta itemprop="datePublished" content="2020-05-17T18:06:28&#43;05:30" />
+<meta itemprop="dateModified" content="2020-05-17T18:06:28&#43;05:30" />
+<meta itemprop="wordCount" content="1191">
+
+
+
+<meta itemprop="keywords" content="competitive programming,algorithms," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sparse Table"/>
+<meta name="twitter:description" content="Sparse Table Sparse Table is a data structure that lets you answer, most range queries in $\mathcal{O}(\log{n})$, in an immutable array. But for some queries like (minimum, maximum, gcd) it can answer queries in $\mathcal{O}(1)$. It also requires $\mathcal{O}(n\log{n})$ preprocessing time and extra space of similar order. One thing to note is that you cannot change the elements of the array, therefore this algorithm might be useful only when values of array remain unchanged."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://gradient-iiits.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Gradient IIITS
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Sparse Table</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-17T18:06:28&#43;05:30">May 17, 2020&emsp;
+      </time>
+      
+      <span class="f6 mv4 dib tracked">
+        By &nbsp;Ram Nad</span>  
+          
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="sparse-table">Sparse Table</h1>
+<p>Sparse Table is a data structure that lets you answer, most range queries in $\mathcal{O}(\log{n})$, in an immutable array. But for some queries like (minimum, maximum, gcd) it can answer queries in $\mathcal{O}(1)$. It also requires $\mathcal{O}(n\log{n})$ preprocessing time and extra space of similar order. One thing to note is that you cannot change the elements of the array, therefore this algorithm might be useful only when values of array remain unchanged. And also as in the case of <a href="http://gradient-iiits.github.io/posts/sqrt-decomposition/">Square Root Decomposition</a>, the operation that we do on the range must be associative.</p>
+<h2 id="idea">Idea</h2>
+<p>First notice that binary representation of a number $n$ has exactly $\lfloor\log{n}\rfloor + 1$ bits, which is $\mathcal{O}(\log{n})$. Now suppose that we are given a range $[L, R]$ which is divided into segments of size $2^{0}$, $2^{1}$, $2^{2}$, $2^{3}$ $&hellip;$ and so on. It is clear that if we have $n$ elements in the array, then the number of segments cannot be more than the number of bits in the binary representation of $n$. Therefore if we have our values of queries over these segments, then we can combine them in $\mathcal{O}(\log{n})$ to get an answer to our query.</p>
+<p>So, that is what we will do here. Assume we have an array of size $n$. We will precalculate the query for segments</p>
+<p>$[I, I]$, $[I, I + 1]$ $[I, I + 3]$, $[I, I + 7]$ &hellip; $[I, I + N - 1]$</p>
+<p>for all possible values of $I$ (Not all the segments will be valid for all $I$).</p>
+<p><strong>Note: $N$ is maximum possible power of $2$ less than or equal to $n$.</strong></p>
+<p>Once, we have precalculated the above values we can answer as many range queries as required.</p>
+<h2 id="example">Example</h2>
+<p>Let us look at an example to understand things better.</p>
+<p>We have array, $[2, 4, -1, 0, 6, 8, 9, 4, 3]$ and for any possible range, we want to find the sum of elements in that range. So, we have $n = 9$. Therefore, $N = 8$ (maximum power of $2$ less than $n$). So, we will have the following segments (assuming $1$ based indexing) with values of their query,</p>
+<p>$[1, 1] = 4$, $[1, 2] = 6$, $[1, 4] = 5$, $[1, 8] = 32$</p>
+<p>$[2, 2] = 4$, $[2, 3] = 3$, $[2, 5] = 9$, $[2, 9] = 33$</p>
+<p>$[3, 3] = -1$, $[3, 4] = -1$, $[3, 6] = 13$</p>
+<p>$[4, 4] = 0$, $[4, 5] = 6$, $[4, 7] = 23$</p>
+<p>$[5, 5] = 6$, $[5, 6] = 14$, $[5, 8] = 27$</p>
+<p>$[6, 6] = 8$, $[6, 7] = 17$, $[6, 9] = 24$</p>
+<p>$[7, 7] = 9$, $[7, 8] = 13$</p>
+<p>$[8, 8] = 4$, $[8, 9] = 7$</p>
+<p>$[9, 9] = 3$</p>
+<p>Now suppose we want to calculate the value for the range $[3, 7]$, We have</p>
+<p>$7 - 3 + 1 = 5 = 2^{2} + 2^{0}$</p>
+<p>So we will use the segments</p>
+<p>$[3, 3 + 2^{2} - 1]$ ($[3, 6]$)</p>
+<p>$and$</p>
+<p>$[3 + 2^{2}, 3 + 2^{2} + 2^{0} - 1]$ ($[7, 7]$)</p>
+<p>Note that, for any given range we will have their difference less than equal to $n$ and we can always calculate the final query like this and it will take in the worst case $\mathcal{O}(\log{n})$ steps.</p>
+<h2 id="implementation">Implementation</h2>
+<p>Here we will look at how to precalculate the values and how to do range queries. For complete implementation, check out the <a href="/code/sparse-table/code1.cpp">code here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// Here `a` is the original array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> log(n) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+<span style="color:#66d9ef">int</span> queries[n][N];
+
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) {
+    queries[i] <span style="color:#f92672">=</span> a[i];
+}
+
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> N; i<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> i) <span style="color:#f92672">&lt;=</span> n; j<span style="color:#f92672">++</span>) {
+        queries[j][i] <span style="color:#f92672">=</span> queries[j][i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> queries[j <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> (i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+}
+</code></pre></div><p>Now, let us understand the above code. First loop which runs a total of $n$ times assign the values for ranges of type, $[0, 0]$, $[1, 1]$, $&hellip;$.</p>
+<p>Second loop runs for $N \times n$ times which is $\mathcal{O}(n\log{n})$. To understand the code let us take alook at one example.</p>
+<p><code>queries[1][3]</code> basically means the segment $[1, 8]$ ($2^{3}$ elements).</p>
+<p><code>1 &lt;&lt; x</code> is equal to $2^{x}$, so <code>j + (1 &lt;&lt; (i-1))</code> equals <code>j + $2^{i-1}$</code>. Therefore,</p>
+<p><code>queries[1 + (1 &lt;&lt; (2))][2]</code> denotes the segment $[5, 8]$ and ofcourse <code>queries[1][3]</code> denotes the segment $[1, 4]$. Therefore,</p>
+<p><code>queries[1][2] + queries[1 + (1 &lt;&lt; (2))][2]</code></p>
+<p>translates to somewhat $[1, 4] + [5, 8]$.</p>
+<p>Try to look at some other examples by yourself (just assign <code>i</code> and <code>j</code> some suitable value) and convince yourself that this code actually, computes the value for all possible segments correctly.</p>
+<p>Following is the code to calculate query for range, $[L, R]$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> R <span style="color:#f92672">-</span> L <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> L;
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> N <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) {
+    <span style="color:#66d9ef">if</span>(size <span style="color:#f92672">-</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> i) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) {
+        sum <span style="color:#f92672">+=</span> queries[pos][i];
+        pos <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> i;
+        size <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> i;
+    }
+}
+</code></pre></div><p><code>pos</code> denotes the position from where we need to process queries and <code>size</code> denotes the number of elements left for processing. So, <code>pos</code> starts from $L$ and <code>size</code> starts from $(R - L + 1)$.</p>
+<p>We basically start from biggest power of $2$ and whenever, we get to a value 2^{i} such that it is less than or equal to current <code>size</code>, we process range $[pos, pos + 2^{i} - 1]$, now because elements upto $pos + 2^{i} - 1$ is processed, we set $pos = pos + 2^{i}$ and also since total $2^{i}$ elements are processed, we now decrease size by the $2^{i}$.</p>
+<p>Now notice that the new value of size will be less than $2^{i}$ (Thinks in terms of binary representation). So, it is guaranteed that size will eventually reach $0$.</p>
+<h2 id="minimum-range-queries-in-mathcalo1">Minimum Range queries in $\mathcal{O}(1)$</h2>
+<p>Now, suppose that we need to find the minimum of numbers in the range. Preprocessing steps remain the same (except instead of adding the segments we find minimum between them). But the query part changes a bit.</p>
+<p>Suppose we need to answer query for $[L, R]$ and $size = R - L + 1$. Find the largest power of $2$, less than equal to the size. Let this be $2^{j}$. Now if we find minimum between range $[L, L + 2^{j} - 1]$ and $[R - 2^{j} + 1, R]$, we will be done.</p>
+<p>Why? because these two ranges cover all the elements between $[L, R]$. As, both the ranges, lie between $L$ and between $R$. ($L + 2^{j} - 1$ &lt;= R$ and $R - 2^{j} + 1$ &gt;= L$). Also, since the total number of elements combining both the ranges is greater than <code>size</code> (Again, think in terms of binary). So, it is guaranteed that all the elements are covered.</p>
+<p>Now, if we need to calculate 2^{j} value for each query then it will again reduce to $\mathcal{O}(\log{n})$. So, instead, we precalculate these values as well. This can be done in $\mathcal{O}(n)$. Therefore, our overall complexity for precalculation remains the same. The complete implementation can be found <a href="/code/sparse-table/code2.cpp">here</a>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://cp-algorithms.com/data_structures/sparse-table.html">https://cp-algorithms.com/data_structures/sparse-table.html</a></li>
+<li><a href="https://www.hackerearth.com/practice/notes/sparse-table/">https://www.hackerearth.com/practice/notes/sparse-table/</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/competitive-programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">competitive programming</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/algorithms" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">algorithms</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+      <p class="f5 b mb3">Content</p>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#idea">Idea</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#implementation">Implementation</a></li>
+    <li><a href="#minimum-range-queries-in-mathcalo1">Minimum Range queries in $\mathcal{O}(1)$</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+  
+  
+  
+  
+    <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+      <p class="f5 b mb3">Related</p>
+      <ul class="pa0 list">
+         
+           <li  class="mb2">
+            <a href="/posts/sqrt-decomposition/">Square Root Decomposition</a>
+          </li>
+          
+      </ul>
+  </div>
+  
+  </aside>
+
+  </article>
+
+    </main>
+    
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+    <div class="flex justify-between">
+    <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://gradient-iiits.github.io/" >
+      &copy;  Gradient IIITS 2020 
+    </a>
+      <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+  </footer>
+  
+
+    <script
+  type="text/javascript"
+  async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
