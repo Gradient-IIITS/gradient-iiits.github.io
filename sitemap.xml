@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://gradient-iiits.github.io/</loc>
+    <lastmod>2020-06-24T12:42:40+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gradient-iiits.github.io/posts/interview-preparation/</loc>
+    <lastmod>2020-06-24T12:42:40+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gradient-iiits.github.io/tags/interviews/</loc>
+    <lastmod>2020-06-24T12:42:40+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gradient-iiits.github.io/posts/</loc>
+    <lastmod>2020-06-24T12:42:40+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gradient-iiits.github.io/tags/</loc>
+    <lastmod>2020-06-24T12:42:40+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>http://gradient-iiits.github.io/tags/algorithms/</loc>
     <lastmod>2020-05-17T18:06:28+05:30</lastmod>
   </url>
@@ -13,22 +38,7 @@
   </url>
   
   <url>
-    <loc>http://gradient-iiits.github.io/</loc>
-    <lastmod>2020-05-17T18:06:28+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://gradient-iiits.github.io/posts/</loc>
-    <lastmod>2020-05-17T18:06:28+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>http://gradient-iiits.github.io/posts/sparse-table/</loc>
-    <lastmod>2020-05-17T18:06:28+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://gradient-iiits.github.io/tags/</loc>
     <lastmod>2020-05-17T18:06:28+05:30</lastmod>
   </url>
   

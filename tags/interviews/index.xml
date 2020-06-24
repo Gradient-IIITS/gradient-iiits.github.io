@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interviews on Gradient IIITS</title>
+    <link>http://gradient-iiits.github.io/tags/interviews/</link>
+    <description>Recent content in interviews on Gradient IIITS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2020 12:42:40 +0530</lastBuildDate>
+    
+	<atom:link href="http://gradient-iiits.github.io/tags/interviews/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interview Preparations</title>
+      <link>http://gradient-iiits.github.io/posts/interview-preparation/</link>
+      <pubDate>Wed, 24 Jun 2020 12:42:40 +0530</pubDate>
+      
+      <guid>http://gradient-iiits.github.io/posts/interview-preparation/</guid>
+      <description>Interview Preparation Tips What you need to do:  Do a minimum of 2 certifications (Linkedin Learning, Coursera, Udemy, Edx, etc) Write Blogs (compulsory). Even just post your solutions. (Check gitbook if you need a place for this.) Prepare a resume. Write about each of your project and keep it with yourself so that you can revise before an interview. Get ready with a short description of yourself, in order to introduce yourself to the interviewer.</description>
+    </item>
+    
+  </channel>
+</rss>
