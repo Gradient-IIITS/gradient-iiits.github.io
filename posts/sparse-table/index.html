@@ -6,7 +6,7 @@
     
     <title>Gradient IIITS  | Sparse Table</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="generator" content="Hugo 0.74.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -33,13 +33,14 @@
 <meta property="article:modified_time" content="2020-05-17T18:06:28+05:30" />
 <meta itemprop="name" content="Sparse Table">
 <meta itemprop="description" content="Sparse Table Sparse Table is a data structure that lets you answer, most range queries in $\mathcal{O}(\log{n})$, in an immutable array. But for some queries like (minimum, maximum, gcd) it can answer queries in $\mathcal{O}(1)$. It also requires $\mathcal{O}(n\log{n})$ preprocessing time and extra space of similar order. One thing to note is that you cannot change the elements of the array, therefore this algorithm might be useful only when values of array remain unchanged.">
-<meta itemprop="datePublished" content="2020-05-17T18:06:28&#43;05:30" />
-<meta itemprop="dateModified" content="2020-05-17T18:06:28&#43;05:30" />
+<meta itemprop="datePublished" content="2020-05-17T18:06:28+05:30" />
+<meta itemprop="dateModified" content="2020-05-17T18:06:28+05:30" />
 <meta itemprop="wordCount" content="1191">
 
 
 
-<meta itemprop="keywords" content="competitive programming,algorithms," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="competitive programming,algorithms," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sparse Table"/>
 <meta name="twitter:description" content="Sparse Table Sparse Table is a data structure that lets you answer, most range queries in $\mathcal{O}(\log{n})$, in an immutable array. But for some queries like (minimum, maximum, gcd) it can answer queries in $\mathcal{O}(1)$. It also requires $\mathcal{O}(n\log{n})$ preprocessing time and extra space of similar order. One thing to note is that you cannot change the elements of the array, therefore this algorithm might be useful only when values of array remain unchanged."/>
 
@@ -142,7 +143,7 @@
 <span style="color:#66d9ef">int</span> queries[n][N];
 
 <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) {
-    queries[i] <span style="color:#f92672">=</span> a[i];
+    queries[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> a[i];
 }
 
 <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> N; i<span style="color:#f92672">++</span>) {
